@@ -7,17 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="name"><h1><%=pokemon[index].name%></h1></div>
+    <h2><img src="<%=pokemon[index].img%>"></h2>
+        <ul>
+        <% for (let i = 0; i < pokemon[index].type.length; i++){ %>
+            <li><%=pokemon[index].type[i]%></li>
+     <%   } %>
+    </ul>
+    <div class="stats">
+
+    </div>
 </body>
 </html>
 
- <!-- <% for (let j = 0; j < pokemon[i].type.length; j++){ %>
-                    <li>Type <%=j + 1%>: <%=pokemon[i].type[j]%></li> 
-                    <%  } %>
-               
-                    Stats: <ul>
-                             <li>HP: <%=pokemon[i].stats.hp%></li>
-                             <li>Attack: <%=pokemon[i].stats.attack%></li>
-                             <li>Defense: <%=pokemon[i].stats.defense%></li>
-                         </ul>
-                  -->

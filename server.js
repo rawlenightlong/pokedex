@@ -37,11 +37,18 @@ app.post('/pokemon', (req, res) => {
     res.send(`Pokemon Create Route`)
 })
 
+//Update Route
+app.put('/pokemon:id', (req, res) => {
+    res.send(`Pokemon Update Route`)
+})
+//Edit Route
+app.get('/pokemon/:id/edit', (req, res) => {
+    res.send(`Pokemon Edit Route`)
+})
+
 //Destroy Route
 app.delete('/pokemon/:id', (req, res) => {
-   
     id = req.params.id
-    console.log(id)
      for (let i = 0; i < pokemon.length; i++){
          if (pokemon[i].id === id){
                 pokemon.splice(i, 1)
@@ -52,19 +59,15 @@ app.delete('/pokemon/:id', (req, res) => {
 
 //Show Route
 app.get('/pokemon/:id', (req, res) => {
-    res.send(`Pokemon Show Route`)
+    res.render('show.ejs', {
+    pokemon: pokemon,
+    index: parseInt(req.params.id - 1),  
+    })
 })
 
 
 
-//Update Route
-app.put('/pokemon:id', (req, res) => {
-    res.send(`Pokemon Update Route`)
-})
-//Edit Route
-app.get('/pokemon/:id/edit', (req, res) => {
-    res.send(`Pokemon Edit Route`)
-})
+
 
 app.listen(PORT, () => {
     console.log(`Hey there Delilah, what's it like in Port ${PORT}`)

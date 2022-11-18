@@ -11,7 +11,7 @@
     <div class="container">
         <% for (let i = 0; i < pokemon.length; i++){ %>
             <%=pokemon[i].name %> <br>
-            <img src="<%=pokemon[i].img%>" width="100" height="100"><br>
+            <a href="/pokemon/<%=pokemon[i].id%>"><img src="<%=pokemon[i].img%>" class="w3-round" width="100" height="100"></a><br>
             
             <div class="forms">
                <form action="/pokemon/<%=pokemon[i].id%>/edit" method="GET"><button>Edit</button></form>
