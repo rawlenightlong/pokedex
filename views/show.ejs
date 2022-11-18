@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="name"><h1><%=pokemon[index].name%></h1></div>
+    <div class="nameShow"><h1><%=pokemon[index].name%></h1></div>
     <h2><img src="<%=pokemon[index].img%>"></h2>
         <ul>
         <% for (let i = 0; i < pokemon[index].type.length; i++){ %>
@@ -23,7 +23,7 @@
                 <li>Defense:  <%=pokemon[index].stats.defense%></li>
             </ul>
     </div>
-    <a href="/pokemon"><button>Return To Pokedex</button></a>
+    <a href="/pokemon"><button class="'return">Return To Pokedex</button></a>
 </body>
 </html>
 
