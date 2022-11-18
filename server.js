@@ -6,6 +6,7 @@ const app = express()
 const dotenv = require('dotenv').config()
 const PORT = process.env.PORT
 const pokemon = require('./models/pokemon')
+const methodOverride = require('method-override')
 
 
 
@@ -15,7 +16,7 @@ const pokemon = require('./models/pokemon')
 ////////////
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-
+app.use(methodOverride("_method"))
 
 ////////////
 //Routes
@@ -35,15 +36,26 @@ app.get('/pokemon/new', (req, res) => {
 app.post('/pokemon', (req, res) => {
     res.send(`Pokemon Create Route`)
 })
+
+//Destroy Route
+app.delete('/pokemon/:id', (req, res) => {
+   
+    id = req.params.id
+    console.log(id)
+     for (let i = 0; i < pokemon.length; i++){
+         if (pokemon[i].id === id){
+                pokemon.splice(i, 1)
+        }
+    }
+    res.redirect('/pokemon')
+})
+
 //Show Route
 app.get('/pokemon/:id', (req, res) => {
     res.send(`Pokemon Show Route`)
 })
 
-//Destroy Route
-app.delete('/pokemon/:id', (req, res) => {
-    res.send(`Pokemon Delete Route`)
-})
+
 
 //Update Route
 app.put('/pokemon:id', (req, res) => {
