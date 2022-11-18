@@ -5,6 +5,9 @@ const express = require('express')
 const app = express()
 const dotenv = require('dotenv').config()
 const PORT = process.env.PORT
+const pokemon = require('./models/pokemon')
+
+
 
 
 ////////////
@@ -20,7 +23,9 @@ app.use(express.urlencoded({extended: true}))
 
 //Index Route
 app.get('/pokemon', (req, res) => {
-    res.send(`Pokemon Index Page`)
+    res.render('index.ejs', {
+        pokemon: pokemon
+    })
 })
 //New Route
 app.get('/pokemon/new', (req, res) => {

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rawle's Pokedex</title>
+</head>
+<body>
+    <div class="container">
+        <% for (let i = 0; i < pokemon.length; i++){ %>
+            <img src="<%=pokemon[i].img%>" width="100" height="100"><br>
+               Name: <%=pokemon[i].name %> <br>
+                <% for (let j = 0; j < pokemon[i].type.length; j++){ %>
+                    <li>Type <%=j + 1%>: <%=pokemon[i].type[j]%></li> 
+                 <%  } %><br>
+               
+               Stats: <ul>
+                        <li>HP: <%=pokemon[i].stats.hp%></li>
+                        <li>Attack: <%=pokemon[i].stats.attack%></li>
+                        <li>Defense: <%=pokemon[i].stats.defense%></li>
+                    </ul>
+            
+      <%  } %> 
+    </div>
+
+</body>
+</html>
