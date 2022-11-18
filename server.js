@@ -17,6 +17,7 @@ const methodOverride = require('method-override')
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride("_method"))
+app.use('/static', express.static('public'))
 
 ////////////
 //Routes
