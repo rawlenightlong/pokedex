@@ -47,6 +47,16 @@ app.get('/pokemon/:id/edit', (req, res) => {
     res.send(`Pokemon Edit Route`)
 })
 
+
+
+//Show Route
+app.get('/pokemon/:id', (req, res) => {
+    res.render('show.ejs', {
+    pokemon: pokemon,
+    index: parseInt(req.params.id - 1),  
+    })
+})
+
 //Destroy Route
 app.delete('/pokemon/:id', (req, res) => {
     id = req.params.id
@@ -57,16 +67,6 @@ app.delete('/pokemon/:id', (req, res) => {
     }
     res.redirect('/pokemon')
 })
-
-//Show Route
-app.get('/pokemon/:id', (req, res) => {
-    res.render('show.ejs', {
-    pokemon: pokemon,
-    index: parseInt(req.params.id - 1),  
-    })
-})
-
-
 
 
 
