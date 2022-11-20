@@ -9,19 +9,25 @@
 </head>
 <body>
     <div class="nameShow"><h1><%=pokemon[index].name%></h1></div>
-    <h2><img src="<%=pokemon[index].img%>"></h2>
-        <ul>
-        <% for (let i = 0; i < pokemon[index].type.length; i++){ %>
-            <li><%=pokemon[index].type[i]%></li>
-     <%   } %>
-    </ul>
-    <div class="stats">
-        <h4>Stats</h4>
+    <div class="pokemonStats">
+            <h2><img src="<%=pokemon[index].img%>" style="border-style: solid; border-width: 3px; border-radius: 15px; border-color:black;"></h2>
+       <div class="type"> 
+            
             <ul>
-                <li>HP:  <%=pokemon[index].stats.hp%></li>
-                <li>Attack:  <%=pokemon[index].stats.attack%></li>
-                <li>Defense:  <%=pokemon[index].stats.defense%></li>
+                <h4>Type:</h4>
+             <% for (let i = 0; i < pokemon[index].type.length; i++){ %>
+                <li><%=pokemon[index].type[i]%></li>
+                     <%   } %>
             </ul>
+        </div>
+        <div class="stats">
+                <ul>
+                    <h4>Stats</h4>
+                    <li>HP:  <%=pokemon[index].stats.hp%></li>
+                    <li>Attack:  <%=pokemon[index].stats.attack%></li>
+                    <li>Defense:  <%=pokemon[index].stats.defense%></li>
+                </ul>
+        </div>
     </div>
     <a href="/pokemon"><button class="'return">Return To Pokedex</button></a>
 </body>

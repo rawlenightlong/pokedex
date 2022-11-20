@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rawle's Pokedex</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Create a new Pokemon!</h1>
+    <form action="/pokemon" method="POST">
+        Name: <input type="text" name="name" placeholder="Pokemon Name"/><br><br>
+        Type: <input type="text" name="type[0] type[1]" placeholder="Type 1, Type 2"/><br><br>
+
+
+        Stats:<br><br>
+        
+            HP (1-100): <input type="text" name="stats[hp]" placeholder="Health"/><br><br>
+            Attack (1-100): <input type="text" name="stats.attack" placeholder="Attack"/><br><br>
+            Defense (1-100): <input type="text" name="stats.defense" placeholder="Health"/><br><br>
+       <input type="submit" value="Create Pokemon!"/>
+    </form>
+    
+</body>
+</html>

@@ -10,11 +10,13 @@
 <body>
     <h1 class="welcome">Gotta Catch 'Em Rawle!</h1>
     <h2 class="pageTitle">Click a Pokemon to Learn More!</h2>
+    <h4 class="or">Or click the Pokeball to add a new Pokemon!</h4>
+    <a href="/pokemon/new" class="pokeball"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/769px-Pokebola-pokeball-png-0.png" width="10%" height="10%" background-color="transparent" class="pokeball"></a>
     <div class="container">
         <% for (let i = 0; i < pokemon.length; i++){ %>
             <div class="pokemon">
             <div class="name"> #<%=pokemon[i].id%> - <%=pokemon[i].name %> </div>
-            <a href="/pokemon/<%=pokemon[i].id%>"><img src="<%=pokemon[i].img%>" class="w3-round" width="125" height="125"></a><br>
+            <a href="/pokemon/<%=pokemon[i].id%>"><img src="<%=pokemon[i].img%>" class="w3-round" width="125" height="125" ></a><br>
             
             
             <div class="forms">
