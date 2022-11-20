@@ -8,7 +8,7 @@ const PORT = process.env.PORT
 const pokemon = require('./models/pokemon')
 const methodOverride = require('method-override')
 const { type } = require('os')
-// console.log(pokemon[3].type)
+console.log(pokemon[3])
 
 
 
@@ -44,13 +44,11 @@ app.post('/pokemon', (req, res) => {
     let type = req.body.type
     console.log(type)
     let typeArray = (type.split(" "))
-    console.log(typeArray)
     if (typeArray.length > 1){
         typeArray[0] = (typeArray[0].substring(0, typeArray[0].length - 1))
         req.body.type = typeArray
-        console.log(req.body)
 }
-    // console.log(req.body)
+    console.log(req.body)
     pokemon.unshift(req.body)
     res.redirect('/pokemon')
 })
