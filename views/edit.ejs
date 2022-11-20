@@ -1,14 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+  
+    <script src="/static/app.js" defer></script>
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>POKEDEX</title>
 </head>
 <body>
-    <h1><%=pokemon</h1>
-    
+    <h1>Update <%=pokemon[id].name%>!</h1>
+    <h2><img src="<%=pokemon[id].img%>" style="border-style: solid; border-width: 3px; border-radius: 15px; border-color:black;"></h2>
+   
+    <form action="/pokemon/<%=(parseInt(id) + 1).toString()%>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" placeholder="Pokemon Name"/><br><br>
+        Type: <input type="text" name="type" placeholder="Type 1, Type 2"/><br><br>
+
+
+        Stats:<br><br>
+        
+            HP (1-100): <input type="text" name="stats[hp]" placeholder="Health"/><br><br>
+            Attack (1-100): <input type="text" name="stats[attack]" placeholder="Attack"/><br><br>
+            Defense (1-100): <input type="text" name="stats[defense]" placeholder="Defense"/><br><br>
+       <input type="submit" value="Update <%=pokemon[id].name%>!"/>
+    </form><br>
+    <a href="/pokemon"><button>Return to Pokedex</button></a>
 </body>
 </html>

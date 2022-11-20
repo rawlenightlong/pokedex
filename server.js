@@ -59,7 +59,10 @@ app.put('/pokemon:id', (req, res) => {
 })
 //Edit Route
 app.get('/pokemon/:id/edit', (req, res) => {
-    res.send(`Pokemon Edit Route`)
+    res.render('edit.ejs', {
+        pokemon: pokemon,
+        id: parseInt(req.params.id - 1)
+    })
 })
 
 //Destroy Route
