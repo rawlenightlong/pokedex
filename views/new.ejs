@@ -11,14 +11,14 @@
     <h1>Create a new Pokemon!</h1>
     <form action="/pokemon" method="POST">
         Name: <input type="text" name="name" placeholder="Pokemon Name"/><br><br>
-        Type: <input type="text" name="type[0] type[1]" placeholder="Type 1, Type 2"/><br><br>
+        Type: <input type="text" name="type" placeholder="Type 1, Type 2"/><br><br>
 
 
         Stats:<br><br>
         
             HP (1-100): <input type="text" name="stats[hp]" placeholder="Health"/><br><br>
-            Attack (1-100): <input type="text" name="stats.attack" placeholder="Attack"/><br><br>
-            Defense (1-100): <input type="text" name="stats.defense" placeholder="Health"/><br><br>
+            Attack (1-100): <input type="text" name="stats[attack]" placeholder="Attack"/><br><br>
+            Defense (1-100): <input type="text" name="stats[defense]" placeholder="Defense"/><br><br>
        <input type="submit" value="Create Pokemon!"/>
     </form>
     

@@ -38,16 +38,20 @@ app.get('/pokemon/new', (req, res) => {
 })
 //Create Route
 app.post('/pokemon', (req, res) => {
-    
+    req.body.stats.hp = parseInt(req.body.stats.hp)
+    req.body.stats.attack = parseInt(req.body.stats.attack)
+    req.body.stats.defense = parseInt(req.body.stats.defense)
     let type = req.body.type
+    console.log(type)
     let typeArray = (type.split(" "))
     console.log(typeArray)
     if (typeArray.length > 1){
         typeArray[0] = (typeArray[0].substring(0, typeArray[0].length - 1))
         req.body.type = typeArray
         console.log(req.body)
-    }
-    console.log(req.body)
+}
+    // console.log(req.body)
+    pokemon.unshift(req.body)
     res.redirect('/pokemon')
 })
 
