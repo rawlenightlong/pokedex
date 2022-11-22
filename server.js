@@ -8,11 +8,6 @@ const PORT = process.env.PORT
 const pokemon = require('./models/pokemon')
 const methodOverride = require('method-override')
 
-console.log(pokemon[0].id)
-
-
-
-
 
 ////////////
 //Middleware
@@ -32,9 +27,13 @@ app.get('/pokemon', (req, res) => {
         pokemon: pokemon
     })
 })
+
+
 //New Route
 app.get('/pokemon/new', (req, res) => {
     res.render('new.ejs')
+
+
 })
 //Create Route
 app.post('/pokemon', (req, res) => {
@@ -47,7 +46,8 @@ app.post('/pokemon', (req, res) => {
     if (typeArray.length > 1){
         typeArray[0] = (typeArray[0].substring(0, typeArray[0].length - 1))
         req.body.type = typeArray
-}   console.log(req.body)
+        }   
+    console.log(req.body)
     pokemon.push(req.body)
 
     res.redirect('/pokemon')
@@ -110,4 +110,3 @@ app.listen(PORT, () => {
     console.log(`Hey there Delilah, what's it like in Port ${PORT}`)
 })
 
-console.log(pokemon[152])
