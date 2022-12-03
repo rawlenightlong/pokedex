@@ -6,6 +6,7 @@ const app = express()
 const dotenv = require('dotenv').config()
 const PORT = process.env.PORT
 const pokemon = require('./models/pokemon')
+const morgan = require('morgan')
 const methodOverride = require('method-override')
 
 
@@ -16,6 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride("_method"))
 app.use('/static', express.static('public'))
+app.use(morgan('dev'))
 
 ////////////
 //Routes
